@@ -1,6 +1,5 @@
 package Login;
 
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -15,7 +14,12 @@ import javafx.stage.Stage;
 public class View {
 	final private Model model;
 	final private Stage stage;
+	Menu menufile;
+	Menu setting;
+	Menu menuLanguage;
 	MenuItem closed;
+	MenuItem view;
+	
 	protected Button bclosed;
 	
 	public View(Stage stage, Model model){
@@ -25,17 +29,17 @@ public class View {
 	BorderPane root = new BorderPane();
 	
 	MenuBar menubar = new MenuBar();
-	Menu file = new Menu("File");
-	Menu setting = new Menu("Setting");
-	menubar.getMenus().addAll(file, setting);
+	menufile = new Menu("File");
+	setting = new Menu("Setting");
+	menubar.getMenus().addAll(menufile, setting);
 	MenuItem closed = new MenuItem("Closed");
 	MenuItem de = new MenuItem("Deutsch");
 	MenuItem en = new MenuItem("English");
-	MenuItem view = new MenuItem("FullScreen");
-	file.getItems().add(closed);
-	Menu language = new Menu("Language");
-	language.getItems().addAll(de, en);
-	setting.getItems().addAll(language, view);
+	view = new MenuItem("FullScreen");
+	menufile.getItems().add(closed);
+	menuLanguage = new Menu("Language");
+	menuLanguage.getItems().addAll(de, en);
+	setting.getItems().addAll(menuLanguage, view);
 	
 	bclosed = new Button();
 	bclosed.setText("Test");
@@ -48,10 +52,7 @@ public class View {
 	
 	Scene scene = new Scene(root);
 	stage.setFullScreen(false);
-	stage.setScene(scene);getClass();
-	
-	
-	
+	stage.setScene(scene);getClass();	
 	}
 	
 	public void start(){

@@ -10,6 +10,7 @@ public class TestView {
 	
 	protected Stage stage;
 	protected TestModel model;
+	
 	protected Button b1;
 	protected Label l1;
 	
@@ -20,6 +21,7 @@ public class TestView {
 		
 		GridPane root = new GridPane();
 		Button b1 = new Button();
+		
 		b1.setText("Test");
 		
 		l1 = new Label();
@@ -27,7 +29,9 @@ public class TestView {
 		
 		root.add(l1, 0, 0);
 		root.add(b1, 0, 1);
+		
 		Scene scene = new Scene(root);
+		
 		stage.setScene(scene);
 		
 	}

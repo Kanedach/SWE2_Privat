@@ -6,8 +6,10 @@ import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 public class Login extends Application {
+	
 	private Locale de = Locale.GERMAN;
 	private Locale en = Locale.ENGLISH;
+	
 	private Model model;
 	private Controller controller;
 	private View view;
