@@ -1,5 +1,7 @@
 package Login;
 
+import java.util.Locale;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -14,6 +16,7 @@ import javafx.stage.Stage;
 public class View {
 	final private Model model;
 	final private Stage stage;
+	private Scene scene;
 	Menu menufile;
 	Menu setting;
 	Menu menuLanguage;
@@ -40,21 +43,33 @@ public class View {
 	menuLanguage.getItems().addAll(de, en);
 	setting.getItems().addAll(menuLanguage, view);
 	
+	Label l1 = new Label();
+	l1.setText(ServiceLocator.getSelectedlocale().getDisplayLanguage());
+	
 	bclosed = new Button();
-	bclosed.setText("Test");
+	bclosed.setText(ServiceLocator.getSelectedlocale().getDisplayLanguage());
 
 	
 
 	stage.setTitle("Test App");
 	root.setTop(menubar);
 	root.setCenter(bclosed);
+	root.setBottom(l1);
 	
 	Scene scene = new Scene(root);
 	stage.setFullScreen(false);
 	stage.setScene(scene);getClass();	
+	
+
+	
 	}
 	
 	public void start(){
+		stage.show();
+	}
+	
+	public void reload(){
+		stage.setScene(scene);getClass();
 		stage.show();
 	}
 	
@@ -75,5 +90,6 @@ public class View {
 			stage.setFullScreen(true);
 		}
 	}
+
 	
 }

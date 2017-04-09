@@ -3,20 +3,20 @@ package Login;
 import java.util.Locale;
 
 public class ServiceLocator {
-	private static ServiceLocator singelton;
+	private static ServiceLocator service;
 	private Locale selectLocal;
 	
 	public static void init() {
-		if (singelton == null) {
-			singelton = new ServiceLocator();
+		if (service == null) {
+			service = new ServiceLocator();
 		}
 	}
 	
 	public static void setSelectedLocale(Locale selectlocale){
-		singelton.selectLocal = selectlocale;
+		service.selectLocal = selectlocale;
 	}
 
 	public static Locale getSelectedlocale() {
-		return singelton.selectLocal;
+		return service.selectLocal;
 	}
 }
