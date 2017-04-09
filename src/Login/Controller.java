@@ -7,6 +7,15 @@ public class Controller  {
 	protected Controller (Model model, View view){
 		this.model = model;
 		this.view = view;
+		
+		
+		view.closed.setOnAction(Event -> {
+			view.stop();
+		});
+		
+		view.view.setOnAction(Event -> {
+			view.switchScreenSize();
+		});
 	
 	
 		

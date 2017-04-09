@@ -29,8 +29,9 @@ public class Login extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		model = new Model();
-		controller = new Controller(model, view);
 		view = new View(primaryStage, model);
+		controller = new Controller(model, view);
+		
 			
 		view.start();
 	}

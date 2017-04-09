@@ -18,8 +18,7 @@ public class View {
 	Menu setting;
 	Menu menuLanguage;
 	MenuItem closed;
-	MenuItem view;
-	
+	MenuItem view;	
 	protected Button bclosed;
 	
 	public View(Stage stage, Model model){
@@ -32,10 +31,10 @@ public class View {
 	menufile = new Menu("File");
 	setting = new Menu("Setting");
 	menubar.getMenus().addAll(menufile, setting);
-	MenuItem closed = new MenuItem("Closed");
+	closed = new MenuItem("Closed");
 	MenuItem de = new MenuItem("Deutsch");
 	MenuItem en = new MenuItem("English");
-	view = new MenuItem("FullScreen");
+	view = new MenuItem("Screen Size");
 	menufile.getItems().add(closed);
 	menuLanguage = new Menu("Language");
 	menuLanguage.getItems().addAll(de, en);
@@ -65,6 +64,16 @@ public class View {
 	
 	public Stage getStage(){
 		return stage;
+	}
+	
+
+	
+	public void switchScreenSize(){
+		if(stage.isFullScreen()) {
+			stage.setFullScreen(false);
+		} else {
+			stage.setFullScreen(true);
+		}
 	}
 	
 }
